@@ -45,7 +45,7 @@
 #define TUNE_MODULE 2
 #define TORCH_MODULE 3
 
-#define SLOT_COUNT 4
+#define SLOT_COUNT 8
 #define MODULE_COUNT 4
 
 

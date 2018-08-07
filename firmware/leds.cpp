@@ -25,9 +25,13 @@ void set_leds(bool learning, bool playing) {
         leds[i] = module_led == i ? (learning ? CRGB::DarkRed : playing ? CRGB::DarkGreen : CRGB::DarkGoldenrod) : CRGB::Black;
     }
 
-    for (int i = 0; i < SLOT_COUNT; i++) {
-        leds[i + 3] = slot == i ? CRGB::Turquoise : CRGB::Black;
+    for (int i=0; i < 4;i++)
+    {
+      leds[i+3] = CRGB::Black;
     }
-
+    if (slot < 4)
+      leds[slot+3] = CRGB::Turquoise;
+    else
+      leds[(slot -4) + 3] = CRGB::DarkRed;
     FastLED.show();
 };
